@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/m"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:text="datos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="409dp"
+        android:layout_height="354dp"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="10p"
+        android:layout_marginTop="200dp"
+        android:visibility="gone">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="id" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/correo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Correo"
+                        android:inputType="textWebEmailAddress" />
+
+                    <Button
+                        android:id="@+id/btnG"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="GUARDAR" />
+
+                    <Button
+                        android:id="@+id/btnM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="MODIFICAR" />
+
+                    <Button
+                        android:id="@+id/btnB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="BORRAR" />
+
+                    <Button
+                        android:id="@+id/btnVer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="MOSTRAR" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAgregarNuevo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Agregar Nuevo"
+        android:backgroundTint="#408A0A"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="53dp" />
+
+    <TableLayout
+        android:id="@+id/tablaRegistros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnAgregarNuevo"
+        android:layout_marginStart="8dp"
+        android:stretchColumns="0,1,2,3,4"
+        app:layout_constraintStart_toStartOf="@+id/btnAgregarNuevo"
+        tools:layout_editor_absoluteY="16dp">
+
+        <TableRow
+            android:layout_height="88dp"
+            android:layout_marginTop="100dp"
+            android:layout_weight="1"
+            tools:layout_editor_absoluteX="4dp"
+            tools:layout_editor_absoluteY="120dp">
+
+            <TextView
+                android:layout_column="0"
+                android:layout_weight="1"
+                android:text="ID"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:text="Nombre"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_column="2"
+                android:layout_weight="1"
+                android:text="Correo"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_column="3"
+                android:layout_weight="1"
+                android:text="Editar"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_column="4"
+                android:layout_weight="1"
+                android:text="Eliminar"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="95dp"
+        android:clipToPadding="false"
+        android:paddingTop="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
